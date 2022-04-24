@@ -16,7 +16,7 @@ let año;
 let valor;
 
 const tarifaA = 0.0012;
-const tarifaC = 0.0035;
+const tarifaC = 0.0035; /* Las letras A, C y D son nomenclatura de seguros. No es que no exista la cobertura B, pero es raro que se use para autos.*/
 const tarifaD = 0.0073;
 
 let fin = 0;
@@ -26,16 +26,16 @@ let seguir;
 
 
 function seleccionarCobertura() {
-    cobertura = prompt("¿Qué cobertura te interesa darle a tu vehículo? \n A| Responsabilidad Civil \n C| Terceros Completo \n D| Todo Riesgo");
+    cobertura = prompt("¿Qué cobertura te interesa darle a tu vehículo? \n 1| Responsabilidad Civil \n 2| Terceros Completo \n 3| Todo Riesgo");
 
-    if (cobertura == "A"){
+    if (cobertura == "1"){
         alert("Usted seleccionó la cobertura de 'Responsabilidad Civil'. \n Recuerde que solo cubre daños a terceros");
-    } else if (cobertura == "C") {
+    } else if (cobertura == "2") {
         alert("Usted seleccionó la cobertura de 'Terceros Completo'");
-    } else if (cobertura == "D") {
+    } else if (cobertura == "3") {
         alert("Usted seleccionó la cobertura de 'Todo Riesgo', la mejor cobertura para su vehículo.");
     } else {
-        alert("La opcion seleccionada es incorrecta. Elija A, C o D.");
+        alert("La opcion seleccionada es incorrecta. Elija 1, 2 o 3.");
         seleccionarCobertura();
     }
 }
@@ -48,11 +48,11 @@ function continuar() {
 }
 
 function calcularPrima () {
-    if (cobertura == "A") {
+    if (cobertura == "1") {
         alert("Sr/a " + nombre.toUpperCase() + ", Edad: " + edad + ", Localidad: " + localidad.toUpperCase() + "\n El costo del seguro para su " + marca.toUpperCase() + " " + modelo + " " + año + " es. \n Cobertura A (Responsabilidad Civil): $" + (valor*tarifaA));
-    } else if (cobertura == "C") {
+    } else if (cobertura == "2") {
         alert("Sr/a " + nombre.toUpperCase() + ", Edad: " + edad + ", Localidad: " + localidad.toUpperCase() + "\n El costo del seguro para su " + marca.toUpperCase() + " " + modelo + " " + año + " es. \n Cobertura C (Terceros Completo): $" + (valor*tarifaC));
-    } else if (cobertura == "D") {
+    } else if (cobertura == "3") {
         alert("Sr/a " + nombre.toUpperCase() + ", Edad: " + edad + ", Localidad: " + localidad.toUpperCase() + "\n El costo del seguro para tu " + marca.toUpperCase() + " " + modelo + " " + año + " es. \n Cobertura D (Todo Riesgo): $" + (valor*tarifaD));
     }
 }
@@ -88,10 +88,4 @@ while (fin == 0) {
     }
 }
 
-alert("Fin del programa")
-
-
-
-
-
-
+alert("¡Gracias por visitarnos! Te esperamos nuevamente.")
